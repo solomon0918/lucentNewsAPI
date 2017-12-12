@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/api/get/user_all', 'UserController@getAllUser');
+Route::resource('users', 'UserController');
+
+// Route::get('/api/get/user_all', 'UserController@getAllUser');
 
 Route::get('/api/get/address_all', 'AddressController@getAllAddress');
 
