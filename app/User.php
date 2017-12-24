@@ -21,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'middle_name', 'last_name', 'email', 'password',
+        'user_id', 'first_name', 'middle_name', 'last_name', 'email', 'password',
     ];
 
     /**
@@ -30,6 +30,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'is_active', 'password', 'remember_token',
+        'remember_token',
+        'created_at',
+        'updated_at'
     ];
+
+    public function contact(){
+        return $this->hasMany('\App\Contact', 'user_id');
+    }
+
+    public function address(){
+        return $this->hasMany('\App\Address', 'user_id');
+    }
 }

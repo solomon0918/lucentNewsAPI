@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersContactCountryCodeTable extends Migration
+class CreateUserTitleTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateUsersContactCountryCodeTable extends Migration
      */
     public function up()
     {
-        Schema::create('lk_contact_country_code', function(Blueprint $table){
-            $table->increments('id');
-            $table->string('country_code');
-            $table->string('city');
+        Schema::create('lk_user_title', function(Blueprint $table){
+            $table->increments('user_title_id');
+            $table->string('user_title_desc');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateUsersContactCountryCodeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lk_contact_country_code');
+        Schema::dropIfExists('lk_user_title');
     }
 }

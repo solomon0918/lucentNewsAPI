@@ -15,7 +15,8 @@ class CreateUsersAddressTable extends Migration
     {
         Schema::create('users_address', function(Blueprint $table){
             $table->increments('address_id');
-            $table->string('user_id', 50)->references('user_id')->on('users');
+            $table->string('user_id', 50);
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->string('street');
             $table->string('city');
             $table->string('country');

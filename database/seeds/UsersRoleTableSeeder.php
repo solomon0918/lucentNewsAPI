@@ -11,7 +11,7 @@ class UsersRoleTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users_role')->delete();
+        DB::table('lk_user_role')->delete();
         $users_role = [
             [
                 'role_description' => 'Administrator'
@@ -21,6 +21,6 @@ class UsersRoleTableSeeder extends Seeder
             ]
         ];
 
-        DB::table('users_role')->insert($users_role);
+        DB::table('lk_user_role')->insert($users_role);
     }
 }

@@ -14,9 +14,11 @@ class UsersContactNumberTableSeeder extends Seeder
         DB::table('users_contact')->delete();
         $users_contact = [
             [
-                'country_code' => '63',
-                'contact_role_id' => 1,
+                'area_code' => '+63',
+                'country' => 'Philippines',
                 'number' => '9183832520',
+                'user_id' => 'eanora',
+                'contact_role_id' => 1,
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
             ]

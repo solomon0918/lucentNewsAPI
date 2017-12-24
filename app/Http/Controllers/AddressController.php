@@ -7,7 +7,11 @@ use App\Address;
 
 class AddressController extends Controller
 {
-    public function getAllAddress(){
-    	return Address::all();
-    } 
+	public function getUserAddress($id){
+		return Address::where('user_id', '=', $id)->with([
+			'user' => function($q){
+				$q->select('user_id', 'is_active');
+			}
+		])->get();
+	}
 }
