@@ -16,7 +16,7 @@ class BaseController extends Controller
 				$query->select('user_id', 'street', 'city', 'country', 'zip_code', 'address_role_id');
 			},
 			'contact' => function($query){
-				$query->select('user_id', 'country_code', 'contact_role_id', 'number');
+				$query->select('user_id', 'area_code', 'country', 'number', 'contact_role_id');
 			}
 		])->orderBy('user_id')->get();
 	}
