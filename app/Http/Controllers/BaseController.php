@@ -32,8 +32,4 @@ class BaseController extends Controller
 			$q->select('user_id', 'is_active');
 		}])->orderBy('created_at', 'desc')->get();
 	}
-
-	public function getAllAreaCode(){
-		return AreaCode::all();
-	}
 }
