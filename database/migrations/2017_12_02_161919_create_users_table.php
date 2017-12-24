@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration
             $table->integer('user_title_id')->unsigned();
             $table->foreign('user_title_id')->references('user_title_id')->on('lk_user_title');
             $table->string('first_name');
-            $table->string('middle_name')->nullable();
             $table->string('last_name');
             $table->date('bdate');
             $table->string('email')->unique();

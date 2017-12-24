@@ -42,4 +42,12 @@ class User extends Authenticatable
     public function address(){
         return $this->hasMany('\App\Address', 'user_id');
     }
+
+    public function title(){
+        return $this->belongsTo('\App\UserTitle', 'user_title_id');
+    }
+
+    public function role(){
+        return $this->belongsTo('\App\UserRole', 'user_role_id');
+    }
 }

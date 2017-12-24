@@ -17,4 +17,8 @@ class Address extends Model
 	public function user(){
 		return $this->belongsTo('\App\User', 'user_id');
 	}
+
+	public function role(){
+		return $this->belongsTo('\App\AddressRole', 'address_role_id');
+	}
 }

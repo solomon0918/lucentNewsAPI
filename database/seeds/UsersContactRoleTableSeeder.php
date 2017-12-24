@@ -14,10 +14,10 @@ class UsersContactRoleTableSeeder extends Seeder
         DB::table('lk_contact_role')->delete();
         $contacts_role = [
             [
-                'contact_role_description' => 'Primary'
+                'contact_role_description' => 'Primary Contact'
             ],
             [
-                'contact_role_description' => 'Secondary'
+                'contact_role_description' => 'Secondary Contact'
             ]
         ];
 

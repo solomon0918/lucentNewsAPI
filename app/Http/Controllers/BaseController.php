@@ -11,7 +11,7 @@ use App\Contact;
 class BaseController extends Controller
 {
     public function getAllUser(){
-		return User::select('user_id', 'first_name', 'middle_name', 'last_name', 'bdate', 'email', 'password', 'user_role_id', 'is_active')->with([
+		return User::select('user_id', 'first_name', 'last_name', 'bdate', 'email', 'password', 'user_role_id', 'is_active')->with([
 			'address' => function($query){
 				$query->select('user_id', 'street', 'city', 'country', 'zip_code', 'address_role_id');
 			},

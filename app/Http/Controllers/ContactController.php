@@ -11,7 +11,7 @@ class ContactController extends Controller
     	return Contact::where('user_id', '=', $id)->with([
 			'user' => function($q){
 				$q->select('user_id', 'is_active');
-			}
+			}, 'role'
 		])->get();
 	}
 }

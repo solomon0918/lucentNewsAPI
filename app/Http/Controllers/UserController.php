@@ -11,8 +11,11 @@ class UserController extends Controller
 		return User::where('user_id', '=', $id)->with([
 			'address' => function($q){
 				$q->select('user_id', 'street', 'city', 'country', 'zip_code', 'address_role_id');
-			}
+			},
+			'contact' => function($q){
+				$q->select('user_id', 'area_code', 'country', 'number', 'contact_role_id');
+			},
+			'role', 'title'
 		])->get();
 	}
-
 }
