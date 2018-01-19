@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
 	        	'last_name' => 'Anora',
 	        	'bdate' => \Carbon\Carbon::create(1996,04,17,0,0,0),
 	        	'email' => 'anora.erwinmark@gmail.com',
-	        	'password' => bcrypt('admin0918'),
+	        	'password' => Hash::make('admin0918'),
 	        	'user_role_id' => 1,
 	        	'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
 	        	'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
